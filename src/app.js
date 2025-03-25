@@ -4,6 +4,8 @@ const logger = require("morgan");
 const expressSession = require("express-session");
 const sessionOptions = require("./config/session");
 const { errorHandler, notFound } = require("./controllers/errors");
+const indexRouter = require("./routes/index-route");
+const authRouter = require("./routes/auth-route");
 
 const app = express();
 
@@ -13,6 +15,9 @@ app.set("views", path.join(__dirname, "views"));
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(expressSession(sessionOptions));
+
+app.use("/", indexRouter);
+app.use("/", authRouter);
 
 app.use(errorHandler);
 app.use(notFound);

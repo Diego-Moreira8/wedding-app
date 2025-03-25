@@ -8,6 +8,7 @@ const notFound = (req, res, next) => {
 
 /** @type {import("express").ErrorRequestHandler} */
 const errorHandler = (err, req, res, next) => {
+  console.error(err);
   res.status(500).render("layout", {
     template: "errors",
     errorMessage: "Erro interno do servidor.",

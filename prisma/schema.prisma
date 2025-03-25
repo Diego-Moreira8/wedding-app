@@ -17,7 +17,7 @@ model Session {
 model User {
   id    Int    @id @default(autoincrement())
   name  String
-  phone String
+  phone String @unique
   role  Role   @default(GUEST)
   gift  Gift?
 }

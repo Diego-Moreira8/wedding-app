@@ -1,0 +1,33 @@
+<h1>Bem-vindo(a)!</h1>
+
+<form action="/entrar" method="post">
+  <label for="guestId">Seu nome:</label>
+  <select name="guestId" id="name">
+    <option value="">--Selecione seu nome--</option>
+    <% locals.guests.forEach(guest => { %>
+      <option 
+        value="<%= guest.id %>"
+        <%= locals.values?.guestId == guest.id ? "selected" : "" %>
+      >
+        <%= guest.name %>
+      </option>
+    <% }) %>
+  </select>
+
+
+  <label for="phone">Seu número do WhatsApp:</label>  
+  <input 
+    type="tel"
+    name="phone"
+    id="phone"
+    maxlength="11"
+    minlength="11"
+    placeholder="Ex.: 64993380234"
+    value="<%= locals.values?.phone || "" %>"
+    required
+  >
+
+  <p><%= locals.error %></p>
+
+  <button type="submit">Entrar</button>
+</form>
