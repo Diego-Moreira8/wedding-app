@@ -4,7 +4,7 @@ const indexRouter = Router();
 
 indexRouter.get("/", (req, res, next) => {
   if (req.user) {
-    res.redirect("/presentes");
+    return res.redirect("/presentes");
   }
 
   res.redirect("/entrar");

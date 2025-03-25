@@ -19,7 +19,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(expressSession(sessionOptions));
 app.use(passport.session());
-app.use(addUserToLocals());
+app.use(addUserToLocals);
 
 app.use("/", indexRouter);
 app.use("/", authRouter);
