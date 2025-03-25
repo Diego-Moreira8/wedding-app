@@ -50,7 +50,7 @@ const postLogin = (req, res, next) => {
       if (err) {
         return next(err);
       }
-      res.send("success");
+      res.redirect("/");
     });
   })(req, res, next);
 };

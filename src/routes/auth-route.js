@@ -5,5 +5,6 @@ const authRouter = Router();
 
 authRouter.get("/entrar", getLogin);
 authRouter.post("/entrar", checkGuestId, postLogin);
+//logout
 
 module.exports = authRouter;

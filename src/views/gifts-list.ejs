@@ -1,0 +1,31 @@
+<h1>Lista de Presentes</h1>
+
+<% if (locals.allGifts.length === 0) { %>
+  <p><i>Ainda não há presentes para escolher. Tente novamente mais tarde.</i></p>
+<% } else { %>
+  <form action="/presentes" method="post">
+    <legend>
+      Escolha um presente na lista abaixo e toque em salvar.
+      Você pode alterar depois. Presentes que já foram escolhidos,
+      estão bloqueados.
+    </legend>
+
+    <% locals.allGifts.forEach(g => { %>
+      <div class="gift">
+        <input
+          type="radio"
+          name="gift"
+          id="<%= g.id %>"
+          value="<%= g.id %>"
+          <%= g.userId == locals.user.id ? "checked" : "" %>
+          <%= g.userId && !(g.userId == locals.user.id) ? "disabled" : "" %>
+        >
+        <label for="<%= g.id %>"><%= g.name %></label>
+      </div>
+    <% }) %>
+    
+    <button type="submit">Salvar</button>
+  </form>
+
+  <a href="/presentes/minha-escolha/remover">Remover escolha</a>
+<% } %>
