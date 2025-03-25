@@ -6,4 +6,14 @@ const addUserToLocals = (req, res, next) => {
   next();
 };
 
-module.exports = { addUserToLocals };
+const checkUser = (req, res, next) => {
+  if (!req?.user) {
+    throw new Error("Not authenticated");
+  }
+  next();
+};
+
+module.exports = {
+  addUserToLocals,
+  checkUser,
+};
