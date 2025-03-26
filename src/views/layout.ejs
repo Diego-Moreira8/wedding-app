@@ -15,7 +15,9 @@
     <% if (!locals.noHeader && locals.user) { %>
       <%- include("header") %>
     <% } %>
-
+      
     <%- include(locals.template) %>
+      
+    <%- include("footer") %>
   </body>
 </html>

@@ -1,0 +1,24 @@
+<footer>
+  Faltam <span id="countdown"></span> para o casamento!
+</footer>
+
+<script>
+  window.onload = countdown = () => {
+    const countdown = document.getElementById('countdown');
+    const end = new Date("2025-05-02 19:00 Z-3");
+    const _second = 1000;
+    const _minute = _second * 60;
+    const _hour = _minute * 60;
+    const _day = _hour * 24;
+    const now = new Date();
+    const distance = end - now;
+
+    if (distance < 0) {
+      countdown.innerHTML = '-';
+      return;
+    }
+
+    const days = Math.floor(distance / _day);
+    countdown.innerHTML = days + ' dias ';
+  }  
+</script>
