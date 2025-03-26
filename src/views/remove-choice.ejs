@@ -1,0 +1,13 @@
+<% if (locals.userChoice) { %>
+  <form action="/presentes/minha-escolha/remover" method="post">
+    <p>
+      Tem certeza que deseja remover sua escolha de presente?
+      O presente será liberado para escolha novamente.
+    </p>
+    <button type="submit">Sim, remover</button>
+  </form>
+<% } else { %>
+  <p>Você ainda não escolheu um presente.</p>
+<% }  %>
+
+<a href="/presentes">Voltar para a lista de presentes</a>

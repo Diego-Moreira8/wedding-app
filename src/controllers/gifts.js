@@ -52,8 +52,32 @@ const getUserChoice = async (req, res, next) => {
   });
 };
 
+/** @type {import("express").RequestHandler} */
+const getRemoveChoice = async (req, res, next) => {
+  const userChoice = await prisma.gift.findUnique({
+    where: { userId: req.user.id },
+  });
+
+  res.render("layout", {
+    template: "remove-choice",
+    title: "Remover Escolha",
+    userChoice: userChoice,
+  });
+};
+
+/** @type {import("express").RequestHandler} */
+const postRemoveChoice = async (req, res, next) => {
+  await prisma.gift.update({
+    where: { userId: req.user.id },
+    data: { userId: null },
+  });
+  res.redirect("/presentes");
+};
+
 module.exports = {
   getList,
   postChoice,
   getUserChoice,
+  getRemoveChoice,
+  postRemoveChoice,
 };
