@@ -55,8 +55,19 @@ const postLogin = (req, res, next) => {
   })(req, res, next);
 };
 
+/** @type {import("express").RequestHandler} */
+const getLogout = (req, res, next) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
+};
+
 module.exports = {
   checkGuestId,
   getLogin,
   postLogin,
+  getLogout,
 };
