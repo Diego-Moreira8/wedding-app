@@ -16,6 +16,7 @@
           type="radio"
           name="giftId"
           id="<%= g.id %>"
+          required
           value="<%= g.id %>"
           <%= g.userId == locals.user.id ? "checked" : "" %>
           <%= g.userId && !(g.userId == locals.user.id) ? "disabled" : "" %>

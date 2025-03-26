@@ -14,6 +14,11 @@ const getList = async (req, res, next) => {
 const postChoice = async (req, res, next) => {
   const userId = req.user.id;
   const giftId = parseInt(req.body.giftId);
+
+  if (!giftId) {
+    return res.status(401).redirect("/presentes");
+  }
+
   const gift = await prisma.gift.findUnique({ where: { id: giftId } });
   const giftTaken = gift.userId && gift.userId !== req.user.id;
 
