@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      :root {
-        font-family: sans-serif;
-      }
-    </style>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Diego 💍 Paloma<%= locals.title ? ` | ${locals.title}` : "" %></title>
   </head>
 
@@ -15,8 +12,10 @@
     <% if (!locals.noHeader && locals.user) { %>
       <%- include("header") %>
     <% } %>
-      
-    <%- include(locals.template) %>
+
+    <main>
+      <%- include(locals.template) %>
+    </main>
       
     <%- include("footer") %>
   </body>

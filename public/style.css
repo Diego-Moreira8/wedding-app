@@ -1,0 +1,108 @@
+/* Elements */
+
+:root {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  width: fit-content;
+  margin: 0 auto;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+button[type="submit"],
+button.ok {
+  background-color: darkgreen;
+  border: 2px solid darkgreen;
+  color: white;
+}
+
+label,
+input,
+select {
+  display: block;
+}
+label {
+  padding: 0.5rem 0;
+}
+input,
+select {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+input::placeholder {
+  font-style: italic;
+}
+
+/* Texts */
+h1,
+h2 {
+  font-weight: bold;
+  margin: 2rem 0;
+  text-align: center;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
+p.formError {
+  margin-top: 0.5rem;
+  color: darkred;
+}
+
+i {
+  font-style: italic;
+}
+
+/* Containers */
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100dvh;
+}
+
+body > header {
+  background-color: aquamarine;
+}
+
+body > main {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+  padding: 1rem;
+}
+
+body > footer {
+  text-align: center;
+  background-color: rgb(44, 44, 44);
+  color: lightgrey;
+  padding: 1rem;
+}
+
+body > main > .loginContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+}
