@@ -6,6 +6,7 @@ const getRenderLoginOptions = async (error, req) => {
   return {
     template: "log-in",
     title: "Entrar",
+    noHeader: true,
     guests: guests,
     error: error || "",
     values: req?.body,

@@ -12,6 +12,10 @@
   </head>
 
   <body>
+    <% if (!locals.noHeader && locals.user) { %>
+      <%- include("header") %>
+    <% } %>
+
     <%- include(locals.template) %>
   </body>
 </html>
