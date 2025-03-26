@@ -33,6 +33,10 @@ select {
 label {
   padding: 0.5rem 0;
 }
+label.taken {
+  color: rgb(110, 110, 110);
+  font-style: italic;
+}
 input,
 select {
   width: 100%;
@@ -40,6 +44,13 @@ select {
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
   font-size: 1rem;
+}
+input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  border: none;
+  padding: 0;
 }
 input::placeholder {
   font-style: italic;
@@ -63,9 +74,22 @@ p.formError {
   margin-top: 0.5rem;
   color: darkred;
 }
+p.greeting {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
 i {
   font-style: italic;
+}
+
+a.danger {
+  color: red;
+}
+a.removeChoice {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
 }
 
 /* Containers */
@@ -77,7 +101,12 @@ body {
 }
 
 body > header {
-  background-color: aquamarine;
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: rgb(198, 198, 198);
 }
 
 body > main {
@@ -105,4 +134,14 @@ form {
   display: flex;
   flex-flow: column;
   gap: 2rem;
+}
+
+.formRadioRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inputRadioGroup {
+  margin: 0 auto;
 }
