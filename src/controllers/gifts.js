@@ -37,10 +37,23 @@ const postChoice = async (req, res, next) => {
     data: { userId: userId },
   });
 
-  res.json(updatedGift);
+  res.redirect("/presentes/minha-escolha");
+};
+
+/** @type {import("express").RequestHandler} */
+const getUserChoice = async (req, res, next) => {
+  const userChoice = await prisma.gift.findUnique({
+    where: { userId: req.user.id },
+  });
+  res.render("layout", {
+    template: "choice-details",
+    title: "Minha Escolha",
+    userChoice: userChoice,
+  });
 };
 
 module.exports = {
   getList,
   postChoice,
+  getUserChoice,
 };
