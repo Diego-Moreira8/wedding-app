@@ -1,12 +1,14 @@
-<% if (locals.userChoice) { %>
-  <p>
-    Você escolheu <b><%= locals.userChoice.name %></b>! Sua escolha está
-    registrada. Você pode voltar para alterar depois. Muito obrigado!
-  </p>
-
-  <a href="/presentes/minha-escolha/remover">Remover escolha</a>
-<% } else { %>
-  <p>Você ainda não escolheu um presente.</p>
-<% } %>
-
-<a href="/presentes">Ver a lista de presentes</a>
+<div class="choiceDetailsContainer">
+  <% if (locals.userChoice) { %>
+    <p>
+      Você escolheu <b><%= locals.userChoice.name %></b>! Sua escolha está
+      registrada. Você pode voltar para alterar depois. Muito obrigado!
+    </p>
+  
+    <a class="danger blockLink" href="/presentes/minha-escolha/remover">Remover escolha</a>
+  <% } else { %>
+    <p>Você ainda não escolheu um presente.</p>
+  <% } %>
+  
+  <a class="blockLink" href="/presentes">Ver a lista de presentes</a>
+</div>

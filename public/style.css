@@ -24,6 +24,11 @@ button.ok {
   border: 2px solid darkgreen;
   color: white;
 }
+button.danger {
+  background-color: darkred;
+  border: 2px solid darkred;
+  color: white;
+}
 
 label,
 input,
@@ -86,7 +91,7 @@ i {
 a.danger {
   color: red;
 }
-a.removeChoice {
+a.blockLink {
   display: block;
   width: fit-content;
   margin: 1rem auto;
