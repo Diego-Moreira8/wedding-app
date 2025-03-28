@@ -28,6 +28,9 @@ const checkGuestId = async (req, res, next) => {
 
 /** @type {import("express").RequestHandler} */
 const getLogin = async (req, res, next) => {
+  if (req.user) {
+    return res.redirect("/");
+  }
   res.render("layout", await getRenderLoginOptions());
 };
 
