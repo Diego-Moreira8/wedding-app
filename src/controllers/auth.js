@@ -3,6 +3,11 @@ const passport = require("../config/auth");
 
 const getRenderLoginOptions = async (error, req) => {
   const guests = await prisma.user.findMany({ where: { role: "GUEST" } });
+  guests.sort((a, b) => {
+    if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+    if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+    return 0;
+  });
   return {
     template: "log-in",
     title: "Entrar",

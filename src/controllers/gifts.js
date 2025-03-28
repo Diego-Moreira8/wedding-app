@@ -3,6 +3,13 @@ const prisma = require("../prisma/client");
 /** @type {import("express").RequestHandler} */
 const getList = async (req, res, next) => {
   const allGifts = await prisma.gift.findMany();
+
+  allGifts.sort((a, b) => {
+    if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+    if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+    return 0;
+  });
+
   res.render("layout", {
     template: "gifts-list",
     title: "Lista de Presentes",
