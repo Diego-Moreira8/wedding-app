@@ -1,8 +1,10 @@
 /* Elements */
 
 :root {
-  font-family: sans-serif;
-  font-size: 18px;
+  font-size: 20px;
+}
+* {
+  font-family: "Andada Pro", serif;
 }
 
 * {
@@ -53,6 +55,7 @@ select {
 }
 input[type="radio"] {
   width: 1rem;
+  min-width: 1rem; /* Prevent width from decreasing in small screens */
   height: 1rem;
   margin: 0;
   border: none;
@@ -65,7 +68,7 @@ input::placeholder {
 /* Texts */
 h1,
 h2 {
-  font-weight: bold;
+  font-weight: 900;
   margin: 2rem 0;
   text-align: center;
 }
