@@ -1,10 +1,21 @@
 /* Elements */
 
 :root {
+  --primaryColor: #6a7b64;
+  --secondaryColor: #e0e3d3;
+  --bgColor: #faf8f1;
+  --textColor: #3e3e3e;
+  --textColorInverted: #ffffff;
+  --linkColor: #00305b;
+  --linkColorInverted: #caecff;
+  --ok: #326321;
+  --danger: #c50000;
+
   font-size: 20px;
 }
 * {
   font-family: "Andada Pro", serif;
+  color: var(--textColor);
 }
 
 * {
@@ -14,7 +25,7 @@
 button {
   width: fit-content;
   margin: 0 auto;
-  border: 2px solid rgb(54, 54, 54);
+  border: 2px solid #363636;
   border-radius: 0.5rem;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
@@ -23,14 +34,14 @@ button {
 }
 button[type="submit"],
 button.ok {
-  background-color: darkgreen;
-  border: 2px solid darkgreen;
-  color: white;
+  background-color: var(--ok);
+  border: 2px solid var(--ok);
+  color: var(--textColorInverted);
 }
 button.danger {
-  background-color: darkred;
-  border: 2px solid darkred;
-  color: white;
+  background-color: var(--danger);
+  border: 2px solid var(--danger);
+  color: var(--textColorInverted);
 }
 
 label,
@@ -42,7 +53,7 @@ label {
   padding: 0.5rem 0;
 }
 label.taken {
-  color: rgb(110, 110, 110);
+  color: #6e6e6e;
   font-style: italic;
 }
 input,
@@ -90,6 +101,7 @@ p.formError {
 .greeting {
   font-weight: bold;
   font-size: 1.5rem;
+  color: var(--textColorInverted);
 }
 
 b {
@@ -99,13 +111,20 @@ i {
   font-style: italic;
 }
 
+a {
+  font-weight: 600;
+  color: var(--linkColor);
+}
 a.danger {
-  color: red;
+  color: var(--danger);
 }
 a.blockLink {
   display: block;
   width: fit-content;
   margin: 1rem auto;
+}
+header > a {
+  color: var(--linkColorInverted);
 }
 
 /* Containers */
@@ -114,6 +133,7 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100dvh;
+  background-color: var(--bgColor);
 }
 
 body > header {
@@ -122,7 +142,8 @@ body > header {
   gap: 0.5rem;
   padding: 1rem;
   text-align: center;
-  background-color: rgb(140, 175, 122);
+  background-color: var(--primaryColor);
+  color: var(--textColorInverted);
   box-shadow: 0 4px 10px 0px #00000026;
 }
 
@@ -141,9 +162,12 @@ body > main {
 
 body > footer {
   text-align: center;
-  background-color: rgb(41, 50, 36);
+  background-color: var(--primaryColor);
   color: white;
   padding: 1rem;
+}
+body > footer > #countdown {
+  color: white;
 }
 
 body > main > .loginContainer {
