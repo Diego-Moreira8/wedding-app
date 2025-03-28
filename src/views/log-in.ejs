@@ -1,4 +1,6 @@
 <div class="loginContainer">
+  <img id="heartSvg" src="/heart.svg">
+
   <h1>Bem-vindo(a)!</h1>
   
   <form action="/entrar" method="post">
@@ -18,7 +20,9 @@
     </div>  
   
     <div class="formRow">
-      <label for="phone">Seu número do WhatsApp:</label>
+      <label for="phone">
+        Seu número do WhatsApp (DDD + telefone, apenas números):
+      </label>
       <input
         type="tel"
         name="phone"
@@ -35,4 +39,12 @@
   
     <button type="submit">Entrar</button>
   </form>
+
+  <p class="note">
+    Não se preocupe,
+    <br>
+    seu número não foi compartilhado com terceiros!
+    <br>
+    Este site foi feito pelo noivo.
+  </p>
 </div>
