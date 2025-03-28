@@ -1,6 +1,7 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const prisma = require("../prisma/client");
+const { comparePassword } = require("./bcrypt");
 
 passport.use(
   new LocalStrategy(
@@ -10,17 +11,15 @@ passport.use(
     },
     async function verify(guestId, phone, done) {
       const user = await prisma.user.findUnique({
-        where: {
-          id: parseInt(guestId),
-          phone: phone,
-        },
+        where: { id: parseInt(guestId) },
       });
 
       if (!user) {
         return done(null, false);
       }
 
-      if (phone !== user.phone) {
+      const passwordMatch = await comparePassword(phone, user.phone);
+      if (!passwordMatch) {
         return done(null, false);
       }
 
