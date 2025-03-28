@@ -2,6 +2,7 @@
 
 :root {
   font-family: sans-serif;
+  font-size: 18px;
 }
 
 * {
@@ -75,15 +76,22 @@ h2 {
   font-size: 1.5rem;
 }
 
+p,
+legend {
+  line-height: 1.5;
+}
 p.formError {
   margin-top: 0.5rem;
   color: darkred;
 }
-p.greeting {
+.greeting {
   font-weight: bold;
   font-size: 1.5rem;
 }
 
+b {
+  font-weight: bold;
+}
 i {
   font-style: italic;
 }
@@ -111,7 +119,8 @@ body > header {
   gap: 0.5rem;
   padding: 1rem;
   text-align: center;
-  background-color: rgb(198, 198, 198);
+  background-color: rgb(140, 175, 122);
+  box-shadow: 0 4px 10px 0px #00000026;
 }
 
 body > main {
@@ -120,11 +129,17 @@ body > main {
   flex-flow: column;
   padding: 1rem;
 }
+@media screen and (min-width: 900px) {
+  body > main {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
 
 body > footer {
   text-align: center;
-  background-color: rgb(44, 44, 44);
-  color: lightgrey;
+  background-color: rgb(41, 50, 36);
+  color: white;
   padding: 1rem;
 }
 
