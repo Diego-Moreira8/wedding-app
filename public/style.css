@@ -16,6 +16,7 @@
 * {
   font-family: "Andada Pro", serif;
   color: var(--textColor);
+  word-break: break-all;
 }
 
 * {
@@ -228,4 +229,53 @@ form {
 
 .inputRadioGroup {
   margin: 0 auto;
+}
+
+/* Graphics */
+.graphics {
+  position: fixed;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.graphics > .filledTop {
+  width: 380px;
+  position: absolute;
+  top: -109px;
+  left: 50%;
+  transform: translateX(-397px) rotate(138deg);
+  opacity: 0.2;
+}
+.graphics > .outlinedTop {
+  width: 420px;
+  position: absolute;
+  top: -209px;
+  left: 50%;
+  transform: translateX(-457px) rotate(188.1deg);
+  opacity: 0.3;
+}
+.graphics > .filledBottom {
+  width: 380px;
+  position: absolute;
+  bottom: -109px;
+  left: 50%;
+  transform: translateX(63px) rotate(318deg);
+  opacity: 0.2;
+}
+.graphics > .outlinedBottom {
+  width: 380px;
+  position: absolute;
+  bottom: -109px;
+  left: 50%;
+  transform: translateX(63px) rotate(318deg);
+  opacity: 0.2;
+}
+.graphics > .leaf {
+  width: 380px;
+  position: absolute;
+  bottom: 81px;
+  left: 50%;
+  transform: translateX(-7px) rotate(331deg) scale(-1);
+  opacity: 0.4;
 }
