@@ -5,7 +5,7 @@
 <script>
   window.onload = countdown = () => {
     const countdown = document.getElementById('countdown');
-    const end = new Date("2025-05-02 19:00 Z-3");
+    const end = new Date("2025-05-02");
     const _second = 1000;
     const _minute = _second * 60;
     const _hour = _minute * 60;
@@ -18,7 +18,7 @@
       return;
     }
 
-    const days = Math.floor(distance / _day);
+    const days = Math.floor(distance / _day) + 1;
     countdown.innerHTML = days + ' dias ';
   }  
 </script>
