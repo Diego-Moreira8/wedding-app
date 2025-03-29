@@ -1,22 +1,8 @@
 const { Router } = require("express");
-const prisma = require("../prisma/client");
+const { getIndex } = require("../controllers");
 
 const indexRouter = Router();
 
-indexRouter.get("/", async (req, res, next) => {
-  if (req.user) {
-    const giftChosen = await prisma.gift.findUnique({
-      where: { userId: req.user.id },
-    });
-
-    if (giftChosen) {
-      return res.redirect("/presentes/minha-escolha");
-    }
-
-    return res.redirect("/presentes");
-  }
-
-  res.redirect("/entrar");
-});
+indexRouter.get("/", getIndex);
 
 module.exports = indexRouter;

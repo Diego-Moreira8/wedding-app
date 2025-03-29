@@ -2,7 +2,7 @@ const prisma = require("../prisma/client");
 const passport = require("../config/auth");
 
 const getRenderLoginOptions = async (error, req) => {
-  const guests = await prisma.user.findMany({ where: { role: "GUEST" } });
+  const guests = await prisma.user.findMany();
   guests.sort((a, b) => {
     if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
     if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;

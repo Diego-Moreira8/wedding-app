@@ -4,10 +4,15 @@ const logger = require("morgan");
 const expressSession = require("express-session");
 const sessionOptions = require("./config/session");
 const passport = require("./config/auth");
-const { addUserToLocals, checkUser } = require("./middlewares/custom");
+const {
+  addUserToLocals,
+  checkUser,
+  checkAdmin,
+} = require("./middlewares/custom");
 const indexRouter = require("./routes/index-route");
 const authRouter = require("./routes/auth-route");
 const giftsRouter = require("./routes/gifts-route");
+const adminRouter = require("./routes/admin-route");
 const { errorHandler, notFound } = require("./controllers/errors");
 
 const app = express();
@@ -26,6 +31,7 @@ app.use(addUserToLocals);
 app.use("/", indexRouter);
 app.use("/", authRouter);
 app.use("/presentes", checkUser, giftsRouter);
+app.use("/noivos", checkUser, checkAdmin, adminRouter);
 
 app.use(errorHandler);
 app.use(notFound);

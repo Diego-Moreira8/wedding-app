@@ -83,6 +83,26 @@ input[type="radio"]:focus {
   outline: none;
 }
 
+table {
+  border: 1px solid var(--primaryColor);
+}
+table th,
+table td {
+  padding: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+table > thead {
+  background-color: var(--primaryColor);
+}
+table > thead > tr > th {
+  color: var(--textColorInverted);
+  font-weight: bold;
+}
+table > tbody > tr:nth-of-type(2n) {
+  background-color: var(--secondaryColor);
+}
+
 /* Texts */
 h1,
 h2 {

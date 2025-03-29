@@ -1,0 +1,22 @@
+<h1>Acompanhamento de Presentes</h1>
+
+<% if (locals.allGifts.length === 0) { %>
+  <p><i>Nenhum presente foi adicionado ainda!</i></p>
+<% } else { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Presente</th>
+        <th>Reservado Por</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% locals.allGifts.forEach(gift => { %>
+        <tr>
+          <td><%= gift.name %></td>
+          <td><%= gift.userId ? gift.user.name : "-" %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
