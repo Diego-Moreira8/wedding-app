@@ -8,6 +8,7 @@ const {
   addUserToLocals,
   checkUser,
   checkAdmin,
+  checkThaina,
 } = require("./middlewares/custom");
 const indexRouter = require("./routes/index-route");
 const authRouter = require("./routes/auth-route");
@@ -30,7 +31,7 @@ app.use(addUserToLocals);
 
 app.use("/", indexRouter);
 app.use("/", authRouter);
-app.use("/presentes", checkUser, giftsRouter);
+app.use("/presentes", checkUser, checkThaina, giftsRouter);
 app.use("/noivos", checkUser, checkAdmin, adminRouter);
 
 app.use(errorHandler);

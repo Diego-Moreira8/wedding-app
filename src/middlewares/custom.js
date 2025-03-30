@@ -22,8 +22,20 @@ const checkAdmin = (req, res, next) => {
   next();
 };
 
+/** @type {import("express").RequestHandler} */
+const checkThaina = (req, res, next) => {
+  if (req.user.name === "Thainá") {
+    return res.render("layout", {
+      template: "thaina",
+      title: "Já deu presente!",
+    });
+  }
+  next();
+};
+
 module.exports = {
   addUserToLocals,
   checkUser,
   checkAdmin,
+  checkThaina,
 };
