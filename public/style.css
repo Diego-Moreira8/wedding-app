@@ -164,7 +164,7 @@ header > a {
 body {
   display: flex;
   flex-flow: column;
-  min-height: 100dvh;
+  min-height: 100lvh;
   background-color: var(--bgColor);
 }
 
